@@ -258,15 +258,16 @@ export const Background: FC = () => {
     height: window.innerHeight,
   });
   const { width, height } = windowSize;
-  const backgroundRef = useRef(null);
-  const guraRef = useRef(null);
-  const bookRef = useRef(null);
-  const cameraRef = useRef(null);
-  const guitarRef = useRef(null);
-  const hourGlassRef = useRef(null);
-  const mirrorRef = useRef(null);
-  const mobiusRef = useRef(null);
-  const phoneRef = useRef(null);
+  const backgroundRef = useRef<HTMLImageElement>(null);
+  const guraRef = useRef<HTMLImageElement>(null);
+  const bookRef = useRef<HTMLImageElement>(null);
+  const cameraRef = useRef<HTMLImageElement>(null);
+  const guitarRef = useRef<HTMLImageElement>(null);
+  const hourGlassRef = useRef<HTMLImageElement>(null);
+  const mirrorRef = useRef<HTMLImageElement>(null);
+  const mobiusRef = useRef<HTMLImageElement>(null);
+  const phoneRef = useRef<HTMLImageElement>(null);
+
   const shouldShowItems =
     !(height < 480 || width < 320) || (width < 552 && height < 630);
 
@@ -274,6 +275,7 @@ export const Background: FC = () => {
     setWindowSize({ width: window.innerWidth, height: window.innerHeight });
   };
 
+  // リサイズ時にポジション更新
   useEffect(() => {
     const refs = {
       backgroundRef,
@@ -287,22 +289,12 @@ export const Background: FC = () => {
       phoneRef,
     };
 
-    const onLoad = () => {
-      console.log("onLoad");
-      updatePosition(windowSize, refs); // updatePositionを呼び出し
-    };
-
-    window.addEventListener("load", onLoad);
-
     window.addEventListener("resize", updateSize);
-    window.addEventListener("resize", () => updatePosition(windowSize, refs)); // resize時にもupdatePositionを呼び出し
+    window.addEventListener("resize", () => updatePosition(windowSize, refs));
 
     return () => {
-      window.removeEventListener("load", onLoad);
       window.removeEventListener("resize", updateSize);
-      window.removeEventListener("resize", () =>
-        updatePosition(windowSize, refs)
-      );
+      // ここでの匿名関数のremoveは無効なので不要か、あるいは変数に格納しておく必要がある
     };
   }, [windowSize]);
 
@@ -322,6 +314,20 @@ export const Background: FC = () => {
         alt="Background"
         ref={backgroundRef}
         css={fullWidthImageStyle}
+        onLoad={() => {
+          const refs = {
+            backgroundRef,
+            guraRef,
+            bookRef,
+            cameraRef,
+            guitarRef,
+            hourGlassRef,
+            mirrorRef,
+            mobiusRef,
+            phoneRef,
+          };
+          updatePosition(windowSize, refs);
+        }}
       />
       {shouldShowItems && (
         <>
