@@ -132,17 +132,39 @@ export const Info: FC<InfoProps> = ({ onClose }) => {
               text-align: center;
             `}
           >
-            ディジタルコンテンツ表現実習2024 制作展
+            <p>ディジタルコンテンツ表現実習2024</p>
+            <p>制作展</p>
           </div>
-          <h1
+          <div
             css={css`
-              font-size: 40px;
-              margin: 40px 0 50px;
-              text-align: center;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-bottom: 20px;
             `}
           >
-            〇〇との対話
-          </h1>
+            <img
+              src="/logo/moja.png"
+              css={css`
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                @media screen and (max-width: 390px) {
+                  width: 20dvw;
+                  height: 20dvw;
+                }
+              `}
+            />
+            <h1
+              css={css`
+                font-size: 40px;
+                margin: 40px 0 50px;
+                text-align: center;
+              `}
+            >
+              との対話
+            </h1>
+          </div>
           <p>日時: 2024/12/12 10:00~18:30</p>
           <p>場所: 筑波大学春日エリア 7A202</p>
           <p>料金: 無料</p>
