@@ -2,6 +2,8 @@
 import { css } from "@emotion/react";
 import { FC, ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo_moja from "/logo/moja.png";
+import sea from "/sea.jpg";
 
 // モーダルオーバーレイのスタイル
 const modalOverlayStyle = css`
@@ -144,7 +146,7 @@ export const Info: FC<InfoProps> = ({ onClose }) => {
             `}
           >
             <img
-              src="/logo/moja.png"
+              src={logo_moja}
               css={css`
                 width: 100px;
                 height: 100px;
@@ -225,7 +227,7 @@ export const Info: FC<InfoProps> = ({ onClose }) => {
                   `}
                 >
                   <img
-                    src="/sea.jpg"
+                    src={sea}
                     css={css`
                       width: 300px;
                       max-width: 65dvw;
