@@ -2,7 +2,7 @@
 import { css } from "@emotion/react";
 import { FC, ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo_moja from "/logo/moja.png";
+import logo_moja from "/logo/moja.webp";
 import sea from "/sea.jpg";
 
 // モーダルオーバーレイのスタイル

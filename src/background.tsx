@@ -2,14 +2,14 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import background from "/background.webp";
-import gura from "/gura.png";
-import book from "/book.png";
-import camera from "/camera.png";
-import guitar from "/guitar.png";
-import hourGlass from "/hourGlass.png";
-import mirror from "/mirror.png";
-import mobius from "/mobius.png";
-import phone from "/phone.png";
+import gura from "/gura.webp";
+import book from "/book.webp";
+import camera from "/camera.webp";
+import guitar from "/guitar.webp";
+import hourGlass from "/hourGlass.webp";
+import mirror from "/mirror.webp";
+import mobius from "/mobius.webp";
+import phone from "/phone.webp";
 import { itemDescriptions } from "./itemDescription";
 
 const backgroundStyle = css`

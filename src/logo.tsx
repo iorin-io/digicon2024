@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import logo_moja from "/logo/moja.png";
+import logo_moja from "/logo/moja.webp";
 import logo_to from "/logo/to.svg";
 import logo_no from "/logo/no.svg";
 import logo_tai from "/logo/tai.svg";
