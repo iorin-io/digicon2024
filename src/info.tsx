@@ -8,8 +8,8 @@ const modalOverlayStyle = css`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   background: rgba(10, 10, 10, 0.8); /* ダークでエモーショナルな背景 */
   display: flex;
   justify-content: center;
