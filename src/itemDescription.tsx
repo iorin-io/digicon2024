@@ -29,7 +29,7 @@ export const itemDescriptions: {
     description: <CameraDesc />,
   },
   guitar: {
-    title: "",
+    title: "ギターマン",
     name: "利根匠海",
     description: <GuitarDesc />,
   },
