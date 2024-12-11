@@ -71,12 +71,12 @@ const noStyle = css`
 `;
 
 const taiStyle = css`
-  width: min(20dvw, 37.14dvh);
+  width: min(20dvw, 37.14dvh, 250px);
   height: auto;
   object-fit: contain;
   z-index: 11;
   bottom: 5%;
-  left: 20%;
+  left: 35%;
   @media screen and (max-width: 800px) {
     left: auto;
     right: 50%;
@@ -90,7 +90,7 @@ const taiStyle = css`
 `;
 
 const waStyle = css`
-  width: min(20dvw, 37.14dvh);
+  width: min(20dvw, 37.14dvh, 250px);
   height: auto;
   object-fit: contain;
   z-index: 11;
