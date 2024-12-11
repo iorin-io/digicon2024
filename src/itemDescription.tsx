@@ -44,7 +44,7 @@ export const itemDescriptions: {
     description: <MirrorDesc />,
   },
   mobius: {
-    title: "",
+    title: "The Cyclic Reversal",
     name: "胡洋",
     description: <MobiusDesc />,
   },

@@ -37,12 +37,14 @@ const navButtonStyle = css`
 
 function App() {
   const [isInfoOpen, setIsInfoOpen] = useState(true);
+  const [shouldAnimateLogo, setShouldAnimateLogo] = useState(false);
 
   const openInfo = () => {
     setIsInfoOpen(true);
   };
 
   const closeInfo = () => {
+    setShouldAnimateLogo(true);
     setIsInfoOpen(false);
   };
   return (
@@ -67,7 +69,7 @@ function App() {
         `}
       />
       <Background />
-      <Logo />
+      <Logo animateLogo={shouldAnimateLogo} />
 
       <button css={navButtonStyle} onClick={openInfo}>
         Info
