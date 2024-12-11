@@ -188,9 +188,38 @@ export const Info: FC<InfoProps> = ({ onClose }) => {
           <InViewPortAppearance>
             <h2 css={headingStyle}>Comment</h2>
             <div>
-              <div>プロデューサ</div>
-              <div>小野寺海</div>
-              <div>情報学群情報メディア創成学類</div>
+              <div
+                css={css`
+                  border-bottom: 0.5px solid #fff;
+                  padding-bottom: 10px;
+                  margin-bottom: 20px;
+                  display: flex;
+                `}
+              >
+                <div>
+                  <div>プロデューサ</div>
+                  <div
+                    css={css`
+                      font-size: 24px;
+                      margin-bottom: 10px;
+                    `}
+                  >
+                    小野寺海
+                  </div>
+                  <div>情報学群情報メディア創成学類</div>
+                </div>
+                <div>
+                  <img
+                    src="/sea.jpg"
+                    css={css`
+                      width: 100px;
+                      height: 100px;
+                      object-fit: cover;
+                      margin-left: 20px;
+                    `}
+                  />
+                </div>
+              </div>
               <p css={paragraphStyle}>
                 本制作展のタイトルに用いられている「饗宴」という言葉。この言葉は
                 ”共に（con）” + “生きる（vivium）“の二つからなる、ラテン語
