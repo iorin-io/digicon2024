@@ -16,29 +16,29 @@ const logoStyle = css`
 
 // 各ロゴのスタイル
 const mojaStyle = css`
-  width: 40dvw;
+  width: min(35dvw, 65dvh);
   height: auto;
   object-fit: contain;
 	top: 0;
-	left: 30px;
-	@media screen and (max-width: 900px) {
+	left: 7%;
+	@media screen and (max-width: 800px) {
 		top: 5%;
 		width: 50dvw;
 	}
 	@media screen and (max-width: 600px) {
-		top: 10%;
+		top: 5%;
 		left: 5%;
 		width: 60dvw;
   }
 `;
 
 const toStyle = css`
-  width: 10dvw;
+  width: min(10dvw, 18.57dvh);
   height: auto;
   object-fit: contain;
 	top: 10%;
 	left: 45%;
-	@media screen and (max-width: 900px) {
+	@media screen and (max-width: 800px) {
 		top: 20%;
 		left: 48%;
 		width: 13dvw;
@@ -51,12 +51,12 @@ const toStyle = css`
 `;
 
 const noStyle = css`
-  width: 13dvw;
+  width: min(13dvw, 24.14dvh);
   height: auto;
   object-fit: contain;
   top: 17%;
 	left: 60%;
-	@media screen and (max-width: 900px) {
+	@media screen and (max-width: 800px) {
 		top: 25%;
 		left: 65%;
 		width: 18dvw;
@@ -69,12 +69,13 @@ const noStyle = css`
 `;
 
 const taiStyle = css`
-  width: 20dvw;
+  width: min(20dvw, 37.14dvh);
   height: auto;
   object-fit: contain;
+  z-index: 11;
   bottom: 5%;
 	left: 20%;
-	@media screen and (max-width: 900px) {
+	@media screen and (max-width: 800px) {
 		left: auto;
 		right: 50%;
 		width: 30dvw;
@@ -87,12 +88,13 @@ const taiStyle = css`
 `;
 
 const waStyle = css`
-  width: 20dvw;
+  width: min(20dvw, 37.14dvh);
   height: auto;
   object-fit: contain;
+  z-index: 11;
   bottom: 5%;
 	left: 70%;
-	@media screen and (max-width: 900px) {
+	@media screen and (max-width: 800px) {
 		left: auto;
 		right: 5%;
 		width: 30dvw;
