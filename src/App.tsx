@@ -14,7 +14,7 @@ import mobius from '/mobius.png';
 const backgroundStyle = css`
   position: relative;
   width: 100dvw;
-  height: 100dvh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
