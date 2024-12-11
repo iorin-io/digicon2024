@@ -208,19 +208,32 @@ export const Info: FC<InfoProps> = ({ onClose }) => {
                   </div>
                   <div>情報学群情報メディア創成学類</div>
                 </div>
-                <div>
+              </div>
+              <p css={paragraphStyle}>
+                <div
+                  css={css`
+                    @media screen and (min-width: 600px) {
+                      margin-left: 20px;
+                      float: right;
+                    }
+                    @media screen and (max-width: 600px) {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin-bottom: 20px;
+                    }
+                  `}
+                >
                   <img
                     src="/sea.jpg"
                     css={css`
-                      width: 100px;
-                      height: 100px;
+                      width: 300px;
+                      max-width: 65dvw;
+                      height: auto;
                       object-fit: cover;
-                      margin-left: 20px;
                     `}
                   />
                 </div>
-              </div>
-              <p css={paragraphStyle}>
                 本制作展のタイトルに用いられている「饗宴」という言葉。この言葉は
                 ”共に（con）” + “生きる（vivium）“の二つからなる、ラテン語
                 “convivium” を訳したものです。
