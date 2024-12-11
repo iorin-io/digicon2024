@@ -89,7 +89,8 @@ const modalContentStyle = css`
   max-width: 500px;
   text-align: center;
   color: #333;
-  margin: 50px;
+  margin: 35px;
+  max-height: 80dvh;
   & h2 {
     font-size: 1.5em;
     margin: 0;
@@ -408,7 +409,14 @@ export const Background: FC = () => {
             >
               {itemDescriptions[selectedItem].name}
             </p>
-            <p>{itemDescriptions[selectedItem].description}</p>
+            <div
+              css={css`
+                overflow-y: scroll;
+                max-height: 50vh;
+              `}
+            >
+              {itemDescriptions[selectedItem].description}
+            </div>
             <button onClick={handleCloseModal}>close</button>
           </div>
         </div>

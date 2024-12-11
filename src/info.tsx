@@ -214,7 +214,11 @@ export const Info: FC<InfoProps> = ({ onClose }) => {
               <p css={paragraphStyle}>
                 <div
                   css={css`
-                    @media screen and (min-width: 600px) {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    /* @media screen and (min-width: 600px) {
                       margin-left: 20px;
                       float: right;
                     }
@@ -223,7 +227,7 @@ export const Info: FC<InfoProps> = ({ onClose }) => {
                       justify-content: center;
                       align-items: center;
                       margin-bottom: 20px;
-                    }
+                    } */
                   `}
                 >
                   <img
