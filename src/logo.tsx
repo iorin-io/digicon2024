@@ -20,15 +20,16 @@ const mojaStyle = css`
   height: auto;
   object-fit: contain;
 	top: 0;
-	left: 7%;
+	right: 60%;
 	@media screen and (max-width: 800px) {
 		top: 5%;
-		width: 50dvw;
+		right: 50%;
+		width: min(50dvw, 45dvh);
 	}
 	@media screen and (max-width: 600px) {
 		top: 5%;
 		left: 5%;
-		width: 60dvw;
+		width: min(60dvw, 44dvh);
   }
 `;
 
@@ -41,12 +42,12 @@ const toStyle = css`
 	@media screen and (max-width: 800px) {
 		top: 20%;
 		left: 48%;
-		width: 13dvw;
+		width: min(13dvw, 11.7dvh);
 	}
 	@media screen and (max-width: 600px) {
 		top: 25%;
 		left: 55%;
-		width: 15dvw;
+		width: min(15dvw, 11dvh);
   }
 `;
 
@@ -59,12 +60,12 @@ const noStyle = css`
 	@media screen and (max-width: 800px) {
 		top: 25%;
 		left: 65%;
-		width: 18dvw;
+		width: min(18dvw, 16.2dvh);
 	}
 	@media screen and (max-width: 600px) {
 		top: 30%;
 		left: 75%;
-		width: 20dvw;
+		width: min(20dvw, 14.67dvh);
   }
 `;
 
@@ -78,12 +79,12 @@ const taiStyle = css`
 	@media screen and (max-width: 800px) {
 		left: auto;
 		right: 50%;
-		width: 30dvw;
+		width: min(30dvw, 27dvh);
 	}
 	@media screen and (max-width: 600px) {
 		left: auto;
 		right: 50%;
-		width: 35dvw;
+		width: min(35dvw, 25.67dvh);
   }
 `;
 
@@ -97,12 +98,12 @@ const waStyle = css`
 	@media screen and (max-width: 800px) {
 		left: auto;
 		right: 5%;
-		width: 30dvw;
+		width: min(30dvw, 27dvh);
 	}
 	@media screen and (max-width: 600px) {
 		left: auto;
 		right: 5%;
-		width: 35dvw;
+		width: min(35dvw, 25.67dvh);
   }
 `;
 
