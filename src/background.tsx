@@ -273,6 +273,7 @@ export const Background: FC = () => {
   const updateSize = () => {
     setWindowSize({ width: window.innerWidth, height: window.innerHeight });
   };
+
   useEffect(() => {
     const refs = {
       backgroundRef,
@@ -287,6 +288,7 @@ export const Background: FC = () => {
     };
 
     const onLoad = () => {
+      console.log("onLoad");
       updatePosition(windowSize, refs); // updatePositionを呼び出し
     };
 
