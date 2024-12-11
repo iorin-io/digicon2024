@@ -10,6 +10,7 @@ import guitar from '/guitar.png';
 import hourGlass from '/hourGlass.png';
 import mirror from '/mirror.png';
 import mobius from '/mobius.png';
+import phone from '/phone.png';
 
 const backgroundStyle = css`
   position: relative;
@@ -30,7 +31,7 @@ const fullWidthImageStyle = css`
     object-fit: cover;
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 900px) and (min-width: 552px) {
     width: 180dvw;
     object-fit: cover;
   }
@@ -65,6 +66,7 @@ interface Refs {
   hourGlassRef: React.RefObject<HTMLImageElement>;
   mirrorRef: React.RefObject<HTMLImageElement>;
   mobiusRef: React.RefObject<HTMLImageElement>;
+  phoneRef: React.RefObject<HTMLImageElement>;
 }
 
 function updatePosition(windowSize: WindowSize, refs: Refs) {
@@ -76,6 +78,7 @@ function updatePosition(windowSize: WindowSize, refs: Refs) {
   const hourGlassElement = refs.hourGlassRef.current;
   const mirrorElement = refs.mirrorRef.current;
   const mobiusElement = refs.mobiusRef.current;
+  const phoneElement = refs.phoneRef.current;
 
   if (
     backgroundElement &&
@@ -85,7 +88,8 @@ function updatePosition(windowSize: WindowSize, refs: Refs) {
     guitarElement &&
     hourGlassElement &&
     mirrorElement &&
-    mobiusElement
+    mobiusElement &&
+    phoneElement
   ) {
     const backgroundRect = backgroundElement.getBoundingClientRect();
     const scaleX = backgroundRect.width / backgroundElement.naturalWidth;
@@ -185,6 +189,19 @@ function updatePosition(windowSize: WindowSize, refs: Refs) {
        mobiusElement.style.height = 'auto';
        mobiusElement.style.left = `${(116 / 231) * width - (160 / 231)}px`;
      }
+
+      // phone
+      phoneElement.style.top = `${baseTop}px`;
+      phoneElement.style.transform = 'translate(174%, 15%)';
+      if (width > 551) {
+        phoneElement.style.width = `auto`;
+        phoneElement.style.height = `${400 * scaleY}px`;
+        phoneElement.style.left = `${baseLeft}px`;
+      } else {
+        phoneElement.style.width = 'auto';
+        phoneElement.style.height = `${(97.2201 / 932) * height}px`;
+        phoneElement.style.left = `${(1/2) * width}px`;
+      }
   }
 }
 
@@ -203,6 +220,7 @@ function App() {
   const hourGlassRef = useRef(null);
   const mirrorRef = useRef(null);
   const mobiusRef = useRef(null);
+  const phoneRef = useRef(null);
 
 
   const updateSize = () => {
@@ -218,6 +236,7 @@ function App() {
       hourGlassRef,
       mirrorRef,
       mobiusRef,
+      phoneRef,
     };
 
     const onLoad = () => {
@@ -237,7 +256,7 @@ function App() {
   }, [windowSize]);
 
   const { width, height } = windowSize;
-  const shouldShowItems = !(height < 480 || width < 320);
+  const shouldShowItems = !(height < 480 || width < 320) || (width < 552 && height < 630);
 
   return (
     <div className="background" css={backgroundStyle}>
@@ -259,6 +278,7 @@ function App() {
             <img src={hourGlass} className="hourGlass-image" alt="hourGlass" ref={hourGlassRef} css={itemImageStyle} />
             <img src={mirror} className="mirror-image" alt="mirror" ref={mirrorRef} css={itemImageStyle} />
             <img src={mobius} className="mobius-image" alt="mobius" ref={mobiusRef} css={itemImageStyle} />
+            <img src={phone} className="phone-image" alt="phone" ref={phoneRef} css={itemImageStyle} />
           </>
         )}
       </div>
