@@ -39,7 +39,7 @@ const toStyle = css`
   height: auto;
   object-fit: contain;
   top: 10%;
-  left: 45%;
+  left: 55%;
   @media screen and (max-width: 800px) {
     top: 20%;
     left: 48%;
@@ -57,7 +57,7 @@ const noStyle = css`
   height: auto;
   object-fit: contain;
   top: 17%;
-  left: 60%;
+  left: 70%;
   @media screen and (max-width: 800px) {
     top: 25%;
     left: 65%;
