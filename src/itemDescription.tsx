@@ -34,7 +34,7 @@ export const itemDescriptions: {
     description: <GuitarDesc />,
   },
   hourGlass: {
-    title: "",
+    title: "消えゆく声",
     name: "糸久秀喜",
     description: <HourGlassDesc />,
   },
@@ -45,7 +45,7 @@ export const itemDescriptions: {
   },
   mobius: {
     title: "The Cyclic Reversal",
-    name: "胡洋",
+    name: "(偽名)落合洋一",
     description: <MobiusDesc />,
   },
   phone: {
