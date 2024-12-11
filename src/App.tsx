@@ -2,7 +2,7 @@
 import { Logo } from "./logo";
 import { Background } from "./background";
 import { Global, css } from "@emotion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Info } from "./info";
 
 // アプリ全体のスタイル
@@ -38,13 +38,23 @@ function App() {
   const [isInfoOpen, setIsInfoOpen] = useState(true);
   const [shouldAnimateLogo, setShouldAnimateLogo] = useState(false);
 
+  useEffect(() => {
+    const infoClosed = sessionStorage.getItem("infoClosed");
+    if (infoClosed === "true") {
+      setIsInfoOpen(false);
+      setShouldAnimateLogo(true);
+    }
+  }, []);
+
   const openInfo = () => {
     setIsInfoOpen(true);
+    sessionStorage.setItem("infoClosed", "false");
   };
 
   const closeInfo = () => {
     setShouldAnimateLogo(true);
     setIsInfoOpen(false);
+    sessionStorage.setItem("infoClosed", "true");
   };
   return (
     <div css={appStyle}>
