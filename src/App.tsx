@@ -22,11 +22,10 @@ const navButtonStyle = css`
   background-color: rgba(0, 0, 0, 0);
   color: #fff;
   border: none;
-  padding: 12px 24px;
-  border-radius: 6px;
   cursor: pointer;
   z-index: 1000;
   font-size: 30px;
+  text-decoration: underline;
 
   @media (max-width: 600px) {
     padding: 8px 16px;
@@ -77,6 +76,21 @@ function App() {
 
       {/* Info & Credits モーダルの表示 */}
       {isInfoOpen && <Info onClose={closeInfo} />}
+
+      <div
+        css={css`
+          position: fixed;
+          top: 30%;
+          left: 0;
+          color: #fff;
+          rotate: 90deg;
+          transform-origin: left bottom;
+          font-size: min(5dvw, 30px);
+          white-space: nowrap;
+        `}
+      >
+        ↑Click the item
+      </div>
     </div>
   );
 }
