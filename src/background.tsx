@@ -84,7 +84,7 @@ const modalOverlayStyle = css`
 
 const modalContentStyle = css`
   background: #fff;
-  padding: 20px;
+  padding: 40px;
   border-radius: 4px;
   max-width: 500px;
   text-align: center;
