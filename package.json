@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/css": "^11.13.5",
     "@emotion/react": "^11.13.5",
+    "motion": "^11.13.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
