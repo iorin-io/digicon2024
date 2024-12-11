@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { FC, useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
-import background from "/background.png";
+import background from "/background.webp";
 import gura from "/gura.png";
 import book from "/book.png";
 import camera from "/camera.png";
