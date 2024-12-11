@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useEffect, useRef, useState } from 'react';
 import { css } from '@emotion/react';
+import { Logo } from './logo';
 import background from '/background.png';
 import gura from '/gura.png';
 import book from '/book.png';
@@ -37,6 +38,9 @@ const fullWidthImageStyle = css`
   @media screen and (min-width: 900px) {
     width: 1600px;
   }
+  @media screen and (min-width: 1600px) {
+    width: 100%;
+  }
 `;
 
 const itemImageStyle = css`
@@ -44,6 +48,7 @@ const itemImageStyle = css`
   object-fit: contain;
   z-index: 10;
 `;
+
 // windowSizeの型を定義
 interface WindowSize {
   width: number;
@@ -236,24 +241,27 @@ function App() {
 
   return (
     <div className="background" css={backgroundStyle}>
-      <img
-        src={background}
-        className="full-width-image"
-        alt="Background"
-        ref={backgroundRef}
-        css={fullWidthImageStyle}
-      />
-      {shouldShowItems && (
-        <>
-          <img src={gura} className="gura-image" alt="gura" ref={guraRef} css={itemImageStyle} />
-          <img src={book} className="book-image" alt="book" ref={bookRef} css={itemImageStyle} />
-          <img src={camera} className="camera-image" alt="camera" ref={cameraRef} css={itemImageStyle} />
-          <img src={guitar} className="guitar-image" alt="guitar" ref={guitarRef} css={itemImageStyle} />
-          <img src={hourGlass} className="hourGlass-image" alt="hourGlass" ref={hourGlassRef} css={itemImageStyle} />
-          <img src={mirror} className="mirror-image" alt="mirror" ref={mirrorRef} css={itemImageStyle} />
-          <img src={mobius} className="mobius-image" alt="mobius" ref={mobiusRef} css={itemImageStyle} />
-        </>
-      )}
+      <Logo />
+      <div>
+        <img
+          src={background}
+          className="full-width-image"
+          alt="Background"
+          ref={backgroundRef}
+          css={fullWidthImageStyle}
+        />
+        {shouldShowItems && (
+          <>
+            <img src={gura} className="gura-image" alt="gura" ref={guraRef} css={itemImageStyle} />
+            <img src={book} className="book-image" alt="book" ref={bookRef} css={itemImageStyle} />
+            <img src={camera} className="camera-image" alt="camera" ref={cameraRef} css={itemImageStyle} />
+            <img src={guitar} className="guitar-image" alt="guitar" ref={guitarRef} css={itemImageStyle} />
+            <img src={hourGlass} className="hourGlass-image" alt="hourGlass" ref={hourGlassRef} css={itemImageStyle} />
+            <img src={mirror} className="mirror-image" alt="mirror" ref={mirrorRef} css={itemImageStyle} />
+            <img src={mobius} className="mobius-image" alt="mobius" ref={mobiusRef} css={itemImageStyle} />
+          </>
+        )}
+      </div>
     </div>
   );
 }
