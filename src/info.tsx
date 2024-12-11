@@ -21,10 +21,10 @@ const modalOverlayStyle = css`
 const modalContentStyle = css`
   background: linear-gradient(
     135deg,
-    #80714b,
-    #aa996d
-  ); /* グラデーション背景 */
-  color: #ecf0f1; /* 明るいテキストカラー */
+    rgba(58, 51, 34, 0.5),
+    rgba(212, 192, 142, 0.5)
+  );
+  color: #fff;
   padding: 30px 40px;
   border-radius: 12px;
   max-width: 600px;
