@@ -140,7 +140,7 @@ function App() {
           white-space: nowrap;
         `}
       >
-        ↑Click the item
+        ↑Click the items
       </div>
 
       {isLoading && (
