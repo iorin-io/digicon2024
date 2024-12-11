@@ -1,19 +1,28 @@
 /** @jsxImportSource @emotion/react */
 import { Logo } from "./logo";
 import { Background } from "./background";
-import { Global, css } from "@emotion/react";
+import { Global, css, keyframes } from "@emotion/react";
 import { useEffect, useState } from "react";
 import { Info } from "./info";
 
-// アプリ全体のスタイル
-const appStyle = css`
+const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const appStyle = (isLoading: boolean) => css`
   position: relative;
   width: 100dvw;
   height: 100dvh;
   overflow: hidden;
+  opacity: ${isLoading ? 0 : 1};
+  transition: opacity 1s ease-in;
 `;
 
-// ナビゲーションボタンのスタイル
 const navButtonStyle = css`
   font-family: "Zen Old Mincho", serif;
   position: absolute;
@@ -34,9 +43,32 @@ const navButtonStyle = css`
   }
 `;
 
+const loadingOverlayStyle = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+`;
+
+const spinnerStyle = css`
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  border-top: 8px solid #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: ${spin} 1s linear infinite;
+`;
+
 function App() {
   const [isInfoOpen, setIsInfoOpen] = useState(true);
   const [shouldAnimateLogo, setShouldAnimateLogo] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // ロード状態を管理
 
   useEffect(() => {
     const infoClosed = sessionStorage.getItem("infoClosed");
@@ -44,6 +76,12 @@ function App() {
       setIsInfoOpen(false);
       setShouldAnimateLogo(true);
     }
+
+    const loadTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(loadTimeout);
   }, []);
 
   const openInfo = () => {
@@ -56,18 +94,20 @@ function App() {
     setIsInfoOpen(false);
     sessionStorage.setItem("infoClosed", "true");
   };
+
   return (
-    <div css={appStyle}>
+    <div css={appStyle(isLoading)}>
       <Global
         styles={css`
           @import url("https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap");
           body {
-            font-family: "Zen Old Mincho", serif; /* ここでフォントを指定 */
+            font-family: "Zen Old Mincho", serif;
             margin: 0;
             display: flex;
             place-items: center;
             min-width: 320px;
             min-height: 100dvh;
+            background-color: #fff;
           }
           img {
             -webkit-user-drag: none;
@@ -77,14 +117,15 @@ function App() {
           }
         `}
       />
+
       <Background />
+
       <Logo animateLogo={shouldAnimateLogo} />
 
       <button css={navButtonStyle} onClick={openInfo}>
         Info
       </button>
 
-      {/* Info & Credits モーダルの表示 */}
       {isInfoOpen && <Info onClose={closeInfo} />}
 
       <div
@@ -101,6 +142,12 @@ function App() {
       >
         ↑Click the item
       </div>
+
+      {isLoading && (
+        <div css={loadingOverlayStyle}>
+          <div css={spinnerStyle}></div>
+        </div>
+      )}
     </div>
   );
 }
